@@ -12,7 +12,7 @@ class RedditSpider(Spider):
 
     def parse(self, response):
         sel = Selector(response)
-        sites = sel.xpath('//*[@id="siteTable"]/div[contains(@class, "thing")]')
+        sites = sel.xpath('//*[@id="siteTable"]/div[contains(@class, "thing ")]')
         items = []
         for site in sites:
             item = ScrapyredditItem()
